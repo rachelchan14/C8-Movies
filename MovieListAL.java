@@ -10,17 +10,20 @@ import java.util.ArrayList;
 public class MovieListAL
 {
     // instance variables - replace the example below with your own
-    private ArrayList<Movie> pool;
+    private static ArrayList<Movie> pool = new ArrayList<Movie>();
 
     /**
      * Constructor for objects of class MovieListsAL
      */
     public MovieListAL(Movie[] movies)
     {
-
+        for (int i = 0; i<movies.length; i++)
+        {
+            pool.add(movies[i]);
+        }
     }
 
-    public ArrayList<Movie> getPool()
+    public static ArrayList<Movie> getPool()
     {
         return pool;
     }
@@ -29,21 +32,34 @@ public class MovieListAL
      * Given an arraylist of Movies and a studio name, create a new ArrayList of movies
      * by that studio
      */
-    public ArrayList<Movie> getByStudio(String studio)
+    public static ArrayList<Movie> getByStudio(String studio)
     {
-        return null;
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+        for (int i = 0; i<pool.size(); i++)
+        {
+            if (pool.get(i).getStudio().equals(studio))
+            {
+                movies.add(pool.get(i));
+            }
+        }
+        return movies;
     }
     
     
     /** 
      * get the movie with the highest rating within an ArrayList
      */
-    public Movie getHighestrating(ArrayList<Movie> movies)
+    public static Movie getHighestrating(ArrayList<Movie> movies)
     {
-
-        
-        return null;
-        
+        Movie best = movies.get(0);
+        for (int i = 0; i<movies.size(); i++)
+        {
+            if (movies.get(i).getRating()>best.getRating())
+            {
+                best = movies.get(i);
+            }
+        }
+        return best;
     }
     
     
