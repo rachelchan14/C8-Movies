@@ -68,12 +68,17 @@ public class MovieListAL
     /**
      * Find the highest movies by studio
      */
-    public ArrayList<Movie> findHighestRatedByStudio()
+    public static ArrayList<Movie> findHighestRatedByStudio()
     {
         ArrayList<Movie> highestRated = new ArrayList<Movie>();
-        
+        Movie dis = getHighestrating(getByStudio("Disney"));
+        Movie ghi = getHighestrating(getByStudio("Ghibli"));
+        Movie indy = getHighestrating(getByStudio("Indy"));
+        highestRated.add(dis);
+        highestRated.add(ghi);
+        highestRated.add(indy);
         // Your code goes here
-         return null;
+        return highestRated;
         // return highestRated;
         
     }
