@@ -10,13 +10,14 @@ import java.util.ArrayList;
 public class MovieListAL
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Movie> pool = new ArrayList<Movie>();
+    private static ArrayList<Movie> pool;
 
     /**
      * Constructor for objects of class MovieListsAL
      */
     public MovieListAL(Movie[] movies)
     {
+        pool = new ArrayList<Movie>();
         for (int i = 0; i<movies.length; i++)
         {
             pool.add(movies[i]);
